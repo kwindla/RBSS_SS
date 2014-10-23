@@ -11,22 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019015337) do
+ActiveRecord::Schema.define(version: 20141023213006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "stamps", force: true do |t|
-    t.integer "user_id"
-    t.string  "name"
-    t.boolean "stamped"
+  create_table "dlurls", force: true do |t|
+    t.string   "address"
+    t.boolean  "used"
+    t.string   "artist"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "stamps", ["user_id"], name: "index_stamps_on_user_id", using: :btree
-
-  create_table "users", force: true do |t|
-    t.string   "email"
+  create_table "stamps", force: true do |t|
     t.string   "name"
+    t.integer  "use_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
