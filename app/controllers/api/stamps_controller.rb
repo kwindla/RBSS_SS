@@ -30,17 +30,17 @@ module API
 	    if @response.include? 'stamp'
 	    	if @response["stamp"]["serial"] == "gemini"
 	    		stamp = Stamp.where(:name => "gemini").first_or_create
-	    		stamp.use_count += 1
+	    		stamp.increment(:use_count, by = 1)
 	    		stamp.save
 
 	    	elsif @response["stamp"]["serial"] == "thurz"
 	    		stamp = Stamp.where(:name => "thurz").first_or_create
-	    		stamp.use_count += 1
+	    		stamp.increment(:use_count, by = 1)
 	    		stamp.save
 
-	    	elsif @response["stamp"]["serial"] == "deneia"
-	    		stamp = Stamp.where(:name => "deneia").first_or_create
-	    		stamp.use_count += 1
+	    	elsif @response["stamp"]["serial"] == "denitia"
+	    		stamp = Stamp.where(:name => "denitia").first_or_create
+	    		stamp.increment(:use_count, by = 1)
 	    		stamp.save
 	    	end
 

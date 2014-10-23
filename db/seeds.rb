@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Dlurl.create([
+	{ address: 'https://itunes.apple.com/us/artist/gemini/id450877274', used: false, artist: 'gemini' },
+	{ address: 'https://itunes.apple.com/us/artist/gemini/id450877274', used: false, artist: 'gemini' },
+	{ address: 'https://itunes.apple.com/us/artist/gemini/id450877274', used: false, artist: 'gemini' },
+	{ address: 'https://itunes.apple.com/us/artist/gemini/id450877274', used: false, artist: 'gemini' },
+
+	{ address: 'https://itunes.apple.com/us/artist/thurz/id387838906', used: false, artist: 'thurz' },
+	{ address: 'https://itunes.apple.com/us/artist/thurz/id387838906', used: false, artist: 'thurz' },
+	{ address: 'https://itunes.apple.com/us/artist/thurz/id387838906', used: false, artist: 'thurz' },
+	{ address: 'https://itunes.apple.com/us/artist/thurz/id387838906', used: false, artist: 'thurz' },
+
+	{ address: 'https://itunes.apple.com/us/artist/denitia-and-sene/id577148065', used: false, artist: 'denitia' },
+	{ address: 'https://itunes.apple.com/us/artist/denitia-and-sene/id577148065', used: false, artist: 'denitia' },
+	{ address: 'https://itunes.apple.com/us/artist/denitia-and-sene/id577148065', used: false, artist: 'denitia' },
+	{ address: 'https://itunes.apple.com/us/artist/denitia-and-sene/id577148065', used: false, artist: 'denitia' }
+])
