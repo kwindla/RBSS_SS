@@ -1,0 +1,439 @@
+  [1m[36mSQL (27.7ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (22.1ms)[0m  CREATE TABLE "stamps" ("id" serial primary key, "mediatemple" boolean, "techstars" boolean, "amazon" boolean, "softlayer" boolean, "sendgrid" boolean, "ga" boolean, "techzulu" boolean, "gadgetreview" boolean, "crosscampus" boolean, "jnb" boolean, "sensay" boolean, "digitalla" boolean, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.6ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141011210326')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.0ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (18.5ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (17.3ms)[0m  [1mINSERT INTO "stamps" ("mediatemple", "techstars", "amazon", "softlayer", "sendgrid", "ga", "techzulu", "gadgetreview", "crosscampus", "jnb", "sensay", "digitalla", "created_at", "updated_at", "id") VALUES ('f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', '2014-10-11 21:59:53', '2014-10-11 21:59:53', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stamps" ("mediatemple", "techstars", "amazon", "softlayer", "sendgrid", "ga", "techzulu", "gadgetreview", "crosscampus", "jnb", "sensay", "digitalla", "created_at", "updated_at", "id") VALUES ('f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', '2014-10-11 21:59:53', '2014-10-11 21:59:53', 298486374)
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 14:59:53 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+Completed 500 Internal Server Error in 16ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "stamps" ("mediatemple", "techstars", "amazon", "softlayer", "sendgrid", "ga", "techzulu", "gadgetreview", "crosscampus", "jnb", "sensay", "digitalla", "created_at", "updated_at", "id") VALUES ('f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', '2014-10-11 22:05:30', '2014-10-11 22:05:30', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stamps" ("mediatemple", "techstars", "amazon", "softlayer", "sendgrid", "ga", "techzulu", "gadgetreview", "crosscampus", "jnb", "sensay", "digitalla", "created_at", "updated_at", "id") VALUES ('f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', '2014-10-11 22:05:30', '2014-10-11 22:05:30', 298486374)
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 15:05:30 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[35mStamp Load (0.2ms)[0m  SELECT "stamps".* FROM "stamps"
+Completed 200 OK in 18ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "stamps" ("mediatemple", "techstars", "amazon", "softlayer", "sendgrid", "ga", "techzulu", "gadgetreview", "crosscampus", "jnb", "sensay", "digitalla", "created_at", "updated_at", "id") VALUES ('f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', '2014-10-11 22:06:02', '2014-10-11 22:06:02', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stamps" ("mediatemple", "techstars", "amazon", "softlayer", "sendgrid", "ga", "techzulu", "gadgetreview", "crosscampus", "jnb", "sensay", "digitalla", "created_at", "updated_at", "id") VALUES ('f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', '2014-10-11 22:06:02', '2014-10-11 22:06:02', 298486374)
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 15:06:02 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[35mStamp Load (0.3ms)[0m  SELECT "stamps".* FROM "stamps"
+Completed 200 OK in 17ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (31.7ms)[0m  [1mDROP TABLE "stamps"[0m
+  [1m[35m (3.3ms)[0m  CREATE TABLE "stamps" ("id" serial primary key, "mediatemple" boolean, "techstars" boolean, "amazon" boolean, "softlayer" boolean, "sendgrid" boolean, "ga" boolean, "techzulu" boolean, "gadgetreview" boolean, "crosscampus" boolean, "jnb" boolean, "sensay" boolean, "digitalla" boolean, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (3.9ms)[0m  CREATE TABLE "stamps" ("id" serial primary key, "name" character varying(255), "stamped" boolean, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141011234513')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (6.2ms)[0m  [1mINSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-11 23:45:37', '2014-10-11 23:45:37', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-11 23:45:37', '2014-10-11 23:45:37', 298486374)
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 16:45:38 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[35mStamp Load (0.3ms)[0m  SELECT "stamps".* FROM "stamps"
+Completed 200 OK in 14ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+ListingStampsTest: test_returns_stamps_filtered_by_stamps_received
+------------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 16:45:38 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[36mStamp Load (0.2ms)[0m  [1mSELECT "stamps".* FROM "stamps"[0m
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (0.7ms)[0m  [1mINSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:18:52', '2014-10-12 00:18:52', 980190962)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:18:52', '2014-10-12 00:18:52', 298486374)
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 17:18:52 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[35mStamp Load (0.4ms)[0m  SELECT "stamps".* FROM "stamps"
+Completed 200 OK in 20ms (Views: 6.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+ListingStampsTest: test_returns_stamps_filtered_by_stamps_received
+------------------------------------------------------------------
+  [1m[36m (6.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-12 00:18:52.354130"], ["name", "amazon"], ["stamped", "t"], ["updated_at", "2014-10-12 00:18:52.354130"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-12 00:18:52.356662"], ["name", "softlayer"], ["stamped", "f"], ["updated_at", "2014-10-12 00:18:52.356662"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/stamps?stamped=true" for 127.0.0.1 at 2014-10-11 17:18:52 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"stamped"=>"true", "subdomain"=>"api"}
+  [1m[36mStamp Load (0.4ms)[0m  [1mSELECT "stamps".* FROM "stamps"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:22:21', '2014-10-12 00:22:21', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:22:21', '2014-10-12 00:22:21', 298486374)
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 17:22:21 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[35mStamp Load (0.4ms)[0m  SELECT "stamps".* FROM "stamps"
+Completed 200 OK in 24ms (Views: 6.0ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+ListingStampsTest: test_returns_stamps_filtered_by_stamps_received
+------------------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-12 00:22:21.778979"], ["name", "amazon"], ["stamped", "t"], ["updated_at", "2014-10-12 00:22:21.778979"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-12 00:22:21.787342"], ["name", "softlayer"], ["stamped", "f"], ["updated_at", "2014-10-12 00:22:21.787342"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/stamps?stamped=true" for 127.0.0.1 at 2014-10-11 17:22:21 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"stamped"=>"true", "subdomain"=>"api"}
+  [1m[36mStamp Load (0.8ms)[0m  [1mSELECT "stamps".* FROM "stamps"  WHERE "stamps"."stamped" = 'true'[0m
+Completed 200 OK in 12ms (Views: 2.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:26:41', '2014-10-12 00:26:41', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:26:41', '2014-10-12 00:26:41', 298486374)
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 17:26:41 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[35mStamp Load (0.9ms)[0m  SELECT "stamps".* FROM "stamps"
+Completed 200 OK in 26ms (Views: 6.7ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+------------------------------------------------------------------
+ListingStampsTest: test_returns_stamps_filtered_by_stamps_received
+------------------------------------------------------------------
+  [1m[36m (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-12 00:26:41.302035"], ["name", "amazon"], ["stamped", "t"], ["updated_at", "2014-10-12 00:26:41.302035"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-12 00:26:41.304908"], ["name", "softlayer"], ["stamped", "f"], ["updated_at", "2014-10-12 00:26:41.304908"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/stamps?stamped=true" for 127.0.0.1 at 2014-10-11 17:26:41 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"stamped"=>"true", "subdomain"=>"api"}
+  [1m[36mStamp Load (0.4ms)[0m  [1mSELECT "stamps".* FROM "stamps"  WHERE "stamps"."stamped" = 'true'[0m
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:28:05', '2014-10-12 00:28:05', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:28:05', '2014-10-12 00:28:05', 298486374)
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 17:28:05 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[35mStamp Load (0.4ms)[0m  SELECT "stamps".* FROM "stamps"
+Completed 200 OK in 20ms (Views: 6.3ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+ListingStampsTest: test_returns_stamps_filtered_by_stamps_received
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-12 00:28:05.425703"], ["name", "amazon"], ["stamped", "t"], ["updated_at", "2014-10-12 00:28:05.425703"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-12 00:28:05.428773"], ["name", "softlayer"], ["stamped", "f"], ["updated_at", "2014-10-12 00:28:05.428773"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/stamps?stamped=true" for 127.0.0.1 at 2014-10-11 17:28:05 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"stamped"=>"true", "subdomain"=>"api"}
+  [1m[36mStamp Load (0.4ms)[0m  [1mSELECT "stamps".* FROM "stamps"  WHERE "stamps"."stamped" = 't'[0m
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:31:53', '2014-10-12 00:31:53', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:31:53', '2014-10-12 00:31:53', 298486374)
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 17:31:53 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[35mStamp Load (0.3ms)[0m  SELECT "stamps".* FROM "stamps"
+Completed 200 OK in 15ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+ListingStampsTest: test_returns_stamps_filtered_by_stamps_received
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-12 00:31:53.255908"], ["name", "amazon"], ["stamped", "t"], ["updated_at", "2014-10-12 00:31:53.255908"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-12 00:31:53.259211"], ["name", "softlayer"], ["stamped", "f"], ["updated_at", "2014-10-12 00:31:53.259211"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/stamps?stamped=true" for 127.0.0.1 at 2014-10-11 17:31:53 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"stamped"=>"true", "subdomain"=>"api"}
+  [1m[36mStamp Load (0.6ms)[0m  [1mSELECT "stamps".* FROM "stamps"  WHERE "stamps"."stamped" = 't'[0m
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+  [1m[35m (1.6ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:33:14', '2014-10-12 00:33:14', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:33:14', '2014-10-12 00:33:14', 298486374)
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 17:33:15 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[35mStamp Load (0.2ms)[0m  SELECT "stamps".* FROM "stamps"
+Completed 200 OK in 14ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+ListingStampsTest: test_returns_stamps_filtered_by_stamps_received
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-12 00:33:15.107526"], ["name", "amazon"], ["stamped", "t"], ["updated_at", "2014-10-12 00:33:15.107526"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-12 00:33:15.111465"], ["name", "softlayer"], ["stamped", "f"], ["updated_at", "2014-10-12 00:33:15.111465"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/stamps?stamped=true" for 127.0.0.1 at 2014-10-11 17:33:15 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"stamped"=>"true", "subdomain"=>"api"}
+  [1m[36mStamp Load (0.4ms)[0m  [1mSELECT "stamps".* FROM "stamps"  WHERE "stamps"."stamped" = 't'[0m
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:33:34', '2014-10-12 00:33:34', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:33:34', '2014-10-12 00:33:34', 298486374)
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 17:33:35 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[35mStamp Load (0.3ms)[0m  SELECT "stamps".* FROM "stamps"
+Completed 200 OK in 16ms (Views: 5.3ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+ListingStampsTest: test_returns_stamps_filtered_by_stamps_received
+------------------------------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-12 00:33:35.100207"], ["name", "amazon"], ["stamped", "t"], ["updated_at", "2014-10-12 00:33:35.100207"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-12 00:33:35.103427"], ["name", "softlayer"], ["stamped", "f"], ["updated_at", "2014-10-12 00:33:35.103427"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/stamps?stamped=true" for 127.0.0.1 at 2014-10-11 17:33:35 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"stamped"=>"true", "subdomain"=>"api"}
+  [1m[36mStamp Load (0.5ms)[0m  [1mSELECT "stamps".* FROM "stamps"  WHERE "stamps"."stamped" = 't'[0m
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (6.2ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:38:39', '2014-10-12 00:38:39', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:38:39', '2014-10-12 00:38:39', 298486374)
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 17:38:39 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[35mStamp Load (0.2ms)[0m  SELECT "stamps".* FROM "stamps"
+Completed 200 OK in 13ms (Views: 4.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+ListingStampsTest: test_returns_stamps_filtered_by_stamps_received
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-12 00:38:39.571505"], ["name", "amazon"], ["stamped", "t"], ["updated_at", "2014-10-12 00:38:39.571505"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-12 00:38:39.573670"], ["name", "softlayer"], ["stamped", "f"], ["updated_at", "2014-10-12 00:38:39.573670"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/stamps?stamped=true" for 127.0.0.1 at 2014-10-11 17:38:39 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"stamped"=>"true", "subdomain"=>"api"}
+  [1m[36mStamp Load (0.3ms)[0m  [1mSELECT "stamps".* FROM "stamps"  WHERE "stamps"."stamped" = 't'[0m
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:39:30', '2014-10-12 00:39:30', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 00:39:30', '2014-10-12 00:39:30', 298486374)
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-11 17:39:30 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[35mStamp Load (0.2ms)[0m  SELECT "stamps".* FROM "stamps"
+Completed 200 OK in 11ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+ListingStampsTest: test_returns_stamps_filtered_by_stamps_received
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-12 00:39:30.745080"], ["name", "amazon"], ["stamped", "t"], ["updated_at", "2014-10-12 00:39:30.745080"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-12 00:39:30.747550"], ["name", "softlayer"], ["stamped", "f"], ["updated_at", "2014-10-12 00:39:30.747550"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/stamps?stamped=true" for 127.0.0.1 at 2014-10-11 17:39:30 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"stamped"=>"true", "subdomain"=>"api"}
+  [1m[36mStamp Load (0.3ms)[0m  [1mSELECT "stamps".* FROM "stamps"  WHERE "stamps"."stamped" = 'true'[0m
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (11.9ms)[0m  ALTER TABLE "stamps" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (6.4ms)[0m  [1mBEGIN[0m
+  [1m[35mFixture Delete (24.3ms)[0m  DELETE FROM "stamps"
+  [1m[36mFixture Insert (6.5ms)[0m  [1mINSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 22:34:41', '2014-10-12 22:34:41', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "stamps" ("name", "stamped", "created_at", "updated_at", "id") VALUES ('MyString', 'f', '2014-10-12 22:34:41', '2014-10-12 22:34:41', 298486374)
+  [1m[36m (18.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "stamps" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------------
+ListingStampsTest: test_returns_a_list_of_all_stamps_for_a_user
+---------------------------------------------------------------
+Started GET "/stamps" for 127.0.0.1 at 2014-10-12 15:34:41 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"subdomain"=>"api"}
+  [1m[35mStamp Load (0.2ms)[0m  SELECT "stamps".* FROM "stamps"
+Completed 200 OK in 12ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+------------------------------------------------------------------
+ListingStampsTest: test_returns_stamps_filtered_by_stamps_received
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-10-12 22:34:41.579952"], ["name", "amazon"], ["stamped", "t"], ["updated_at", "2014-10-12 22:34:41.579952"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stamps" ("created_at", "name", "stamped", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2014-10-12 22:34:41.581820"], ["name", "softlayer"], ["stamped", "f"], ["updated_at", "2014-10-12 22:34:41.581820"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/stamps?stamped=true" for 127.0.0.1 at 2014-10-12 15:34:41 -0700
+Processing by API::StampsController#index as HTML
+  Parameters: {"stamped"=>"true", "subdomain"=>"api"}
+  [1m[36mStamp Load (0.4ms)[0m  [1mSELECT "stamps".* FROM "stamps"  WHERE "stamps"."stamped" = 'true'[0m
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
