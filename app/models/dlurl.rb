@@ -3,6 +3,6 @@ class Dlurl < ActiveRecord::Base
 		download_url = Dlurl.where(:artist => artist, :used => false).first
 		download_url.used = true
 		download_url.save
-		@data = {"stamp_serial" => response["stamp"]["serial"], "download_url" => download_url.address}
+		data = {"stamp_serial" => response["stamp"]["serial"], "download_url" => download_url.address}
   end
 end
