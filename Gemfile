@@ -31,6 +31,7 @@ gem 'oauth'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
+gem 'httparty'
 
 # Deployment
 gem 'rails_12factor'

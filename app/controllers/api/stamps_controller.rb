@@ -26,7 +26,7 @@ module API
 	    @resp = @consumer.request(:post, '/v2/stamp', nil, {}, @data, { 'Content-Type' => 'application/x-www-form-urlencoded' })
 	    @response = JSON.parse(@resp.body)
 		    
-			#Create_or_find_by stamp name and write stamped to true. Then Query DB to send JSON.
+			# Create_or_find_by stamp name and write stamped to true. Then Query DB to send JSON.
 	    if @response.include? 'stamp'
 	    	if @response["stamp"]["serial"] == "gemini"
 	    		stamp = Stamp.where(:name => "gemini").first_or_create
@@ -46,16 +46,16 @@ module API
 
 	    	#Deliver stamp serial and Download URL as JSON
 	      data = Dlurl.deliver_url(@response, @response["stamp"]["serial"])
+	      #TODO: Replace with URL Red Bull's app that can accept the data and redirect
+	      @result = HTTParty.post("http://www.google.com", body: data) 
+	      #TODO: Change below line to render nothing after testing completed
 	      render json: data, status: 200
+	   		
 	    else
 	   		#TODO: Redirect to Red Bull Error screen with/without input code failsafe
 	      redirect_to "http://dotfury.com/snowshoe/error.html"
 	    end
 		end
-
-		#Uncomment action below if want to enable input code failsafe if stamp fails
-		# def verify_stamp_by_code
-		# end
 
 	end
 end
